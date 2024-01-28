@@ -8,7 +8,7 @@ object Question10 {
     println(alternate((a: Int, b: Int) => a+b, (a: Int, b:Int) => a-b, List(1, 2, 3)))    // 0
     println(alternate((a: Int, b: Int) => a+b, (a: Int, b:Int) => a-b, List(1, 2, 3, 4))) // 4
   }
-  def alternate(f1: (Int,Int) => Int, f2: (Int,Int) => Int, list: List[Int]): Int ={
+  def alternate(f1: (Int,Int) => Int, f2: (Int,Int) => Int, list: List[Int]): Int = {
     if(list.isEmpty) 0
     else rec(0, list.head, f1, f2, list.tail)
   }

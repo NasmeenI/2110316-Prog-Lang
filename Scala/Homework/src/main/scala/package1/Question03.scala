@@ -7,18 +7,13 @@ object Question03 {
     println(subList(l1, l2))
   }
   def subList(l1: List[Any], l2:List[Any]): Boolean = {
-     rec1(l1, l2)
-  }
-
-  private def rec1(l1: List[Any], l2: List[Any]): Boolean = {
     if (l1.isEmpty) true
-    else if(rec2(l1.head, l2)) rec1(l1.tail, l2)
+    else if (find(l1.head, l2)) subList(l1.tail, l2)
     else false
   }
-
-  private def rec2(x: Any, l2: List[Any]): Boolean = {
+  private def find(x: Any, l2: List[Any]): Boolean = {
     if(l2.isEmpty) false
     else if(x == l2.head) true
-    else rec2(x, l2.tail)
+    else find(x, l2.tail)
   }
 }
